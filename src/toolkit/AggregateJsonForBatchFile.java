@@ -34,7 +34,9 @@ public class AggregateJsonForBatchFile {
     		JsonArrayBuilder cytogpsOutputArrayBuilder = Json.createArrayBuilder();
             
         	String s;
-        	while ((s = br.readLine()) != null) {	
+			int lineNum = 0;
+        	while ((s = br.readLine()) != null) {
+				System.out.println("Processing line " + lineNum++);
         		String karyotype = s;
     			FinalResult finalResult = KaryotypeRunner.getFinalResult(karyotype);
     			JsonObjectBuilder cytogpsOutputBuilder = Json.createObjectBuilder().add("karyotype", karyotype);

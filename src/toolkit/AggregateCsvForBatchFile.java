@@ -52,6 +52,7 @@ public class AggregateCsvForBatchFile {
             		}
                 }
                 lineNum++;
+				System.out.println("Line " + lineNum + " is processed.");
             }
 		} catch (Exception e) {
 			throw e;
